@@ -13,6 +13,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Routing
 require('./server/routes')(app);
 
+// Directories with static files
+app.use(express.static('./server/static/'));
+app.use(express.static('./client/dist/'));
+
 // Setup a default catch-all route that sends back a welcome message in JSON format.
 app.get('*', (req, res) => res.status(200).send({
   message: 'Welcome. Nothing here.',

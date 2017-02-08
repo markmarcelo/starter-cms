@@ -20,10 +20,6 @@ module.exports = (app) => {
   app.put('/api/todos/items/:todoId/:todoItemId', todoItemsController.update);
   app.delete('/api/todos/items/:todoId/:todoItemId', todoItemsController.destroy);
 
-  // Directories with static files
-  app.use(express.static('./server/static/'));
-  app.use(express.static('./client/dist/'));
-
   // For any other request method, return "Method Not Allowed"
   app.all('/api/todos/:todoId/items', (req, res) => res.status(405).send({
     message: 'Method Not Allowed',
