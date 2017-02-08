@@ -1,3 +1,5 @@
+const bcrypt = require('bcrypt-nodejs');
+
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
     username: {
@@ -25,6 +27,17 @@ module.exports = (sequelize, DataTypes) => {
         });
       },
     },
+  }, {
+    instanceMethods: {
+      generateHash: (password) => bcrypt.hashSync(password, bcrypt.genSaltSync(), null),
+      validatePassword: (password) => bcrypt.compareSync(password, this.password),
+    }
   });
+
+  // Encrypt password before saving to database
+  User.hook('beforeCreate', (user, options) => {
+    user.password = user.generateHash(user.password);
+  });
+
   return User;
 };
