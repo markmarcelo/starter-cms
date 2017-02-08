@@ -1,5 +1,4 @@
-'use strict';
-module.exports = function(sequelize, DataTypes) {
+module.exports = (sequelize, DataTypes) => {
   var Slide = sequelize.define('Slide', {
     title: DataTypes.STRING,
     contentMiddle: DataTypes.STRING,
@@ -9,8 +8,11 @@ module.exports = function(sequelize, DataTypes) {
     contentBottomRight: DataTypes.STRING
   }, {
     classMethods: {
-      associate: function(models) {
-        // associations can be defined here
+      associate: (models) => {
+        Slide.belongsTo(models.Slideshow, {
+          foreignKey: 'slideshowId',
+          onDelete: 'CASCADE',
+        });
       }
     }
   });
