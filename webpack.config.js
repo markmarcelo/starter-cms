@@ -25,5 +25,5 @@ module.exports = {
   },
 
   // watch for rebundling
-  watch: true
+  watch: false
 };

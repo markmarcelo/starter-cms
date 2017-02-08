@@ -9,7 +9,8 @@ module.exports = (sequelize, DataTypes) => {
         Slideshow.belongsTo(models.User, {
           foreignKey: 'userId',
           onDelete: 'CASCADE',
-        }).hasMany(models.Slides, {
+        });
+        Slideshow.hasMany(models.Slide, {
           foreignKey: 'slideshowId',
           as: 'slides',
         });
