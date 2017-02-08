@@ -1,3 +1,6 @@
+// auto-generated via sequelize init
+// then refactored to ES6
+
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
