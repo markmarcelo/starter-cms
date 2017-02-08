@@ -1,0 +1,30 @@
+{
+  "name": "starthere",
+  "version": "0.0.0",
+  "description": "tbd",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mark-cruz/temp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mark-cruz/temp/issues"
+  },
+  "homepage": "https://github.com/mark-cruz/temp#readme",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "express": "^4.14.1",
+    "pg": "^6.1.2",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.30.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
