@@ -13,6 +13,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Routing
 require('./server/routes')(app);
 
+// React routing
+const authRoutes = require('./server/routes/auth');
+app.use('/auth', authRoutes);
+
 // Directories with static files
 app.use(express.static('./server/static/'));
 app.use(express.static('./client/dist/'));
