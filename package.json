@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mark-cruz/temp.git"
+    "url": "git+https://github.com/mark-cruz/starthere.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mark-cruz/temp/issues"
+    "url": "https://github.com/mark-cruz/starthere/issues"
   },
-  "homepage": "https://github.com/mark-cruz/temp#readme",
+  "homepage": "https://github.com/mark-cruz/starthere",
   "dependencies": {
     "body-parser": "^1.16.0",
     "express": "^4.14.1",
